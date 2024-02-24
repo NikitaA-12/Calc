@@ -100,9 +100,22 @@ class ViewController: UIViewController {
             }
         
         
+      
+        
+        
         
         calculationHistory.removeAll()
         
+    }
+    
+    @IBAction func unwindAction(unwindSeque: UIStoryboardSegue){
+        
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        guard segue.identifier == "CALCULATIONS_LIST",
+              let calculationsListVC = segue.destination as? CalculationsListViewController else { return }
+        calculationsListVC.result = label.text
     }
     
     
